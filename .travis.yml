@@ -1,0 +1,23 @@
+language: java
+
+jdk:
+  - oraclejdk8
+
+# cache between builds
+cache:
+  directories:
+  - $HOME/.m2
+  - $HOME/.gradle
+
+deploy:
+  # Github deploy on TAG
+  - provider: releases
+    api_key:
+      secure: 4ECrmOjGh479hDgyxV44NunAxcRApQeVE6vF2D5iRjt4gabzoHlsF0Ps9KutRX8Xw5K/iZsRs/xd6RLXwHxpqciXYbXdhcnoaPWnExUvDwB5bFdLmmmF7qtBj16KBT8KovX/3AJcOPvfTHH/KqnLPzO6aoRIXR3jnmNI2lc3iGrfQ78JZD0/LFe+2gTJNZnMI7OdupK/65eXu21DaCkOjT9JV2uz7fGB2cpSsvHyzRSAyYvm7nNzB6bWNpJr0m6yj8OEVCCRmbfTb+McJOA7pQIYP29AiebRxf98JxQ9x7UivtozwRCqazPgmQiAbvjfEGQL2qMl83Mx8cJb3PBL2HHVd2oUH3YAO89f/1auLwYv7Od89cIB1ojAVYYjFp/D8guj6q7Vn+ol/jyg2YxKDzrBnL7ovOO0aOk6WYbIG6bunKy6bXWFlUu3/lnPlan8K3KZG1ko3n2BMlkTUxHw0p6wPsmymKQWgbpSdIC0g8+d9DopT83N0X/iVJwhVkUXbI0m9MZaYRv2cosHvSwsdFvvHyOS/6ceDGhkMNPvcEigl8GZc0pwaeS4tqmtWJuq5JUhAmi5JgxVKdoLe/qR9UNzKC0psDZN1HlOjulXFkG5CmfiIcFynJ6GnN1784WvGTsaiD2yk0ZUW1Rg/L/yzURgzfCiNBg/J0x6bgeFuKI=
+    file_glob: true
+    file: "$TRAVIS_BUILD_DIR/build/distributions/*"
+    skip_cleanup: true
+    body: "Release of $TRAVIS_TAG"
+    draft: false
+    on:
+      tags: true
