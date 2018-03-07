@@ -1,0 +1,14 @@
+{
+  "contact": {
+    "lastname": "Doe",
+    "firstname": "John"
+  },
+  "events": [
+    {
+      "title": "Meeting 1"
+    },
+    {
+      "title": "Meeting 2"
+    }
+  ]
+}
