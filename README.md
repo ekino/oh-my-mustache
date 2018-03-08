@@ -99,7 +99,7 @@ source completion/ohmymustache-completion.bash
 
 If you want enable it permanently, you will have to load it with your profile. Add the following line to your `~/.bash_profile` or `~/.zshrc` and replace `PATH_TO_TOOL` with the location of the oh-my-mustache uncompressed folder.
 ```
-[ -f PATH_TO_TOOL/completionohmymustache-completion.bash ] && source PATH_TO_TOOL/completion/ohmymustache-completion.bash
+[ -f PATH_TO_TOOL/completion/ohmymustache-completion.bash ] && source PATH_TO_TOOL/completion/ohmymustache-completion.bash
 ```
 
 :information_source: ZSH users : you may need to add these two lines before the previous one to enable the bash completion :
